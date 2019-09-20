@@ -13,7 +13,7 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => 'rm-uf649uecg8ni1qn11eo.mysql.rds.aliyuncs.com',
+    'hostname'        => 'rm-uf649uecg8ni1qn11.mysql.rds.aliyuncs.com',
     // 数据库名
     'database'        => 'jshop',
     // 用户名
