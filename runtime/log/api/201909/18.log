@@ -1,0 +1,268 @@
+---------------------------------------------------------------
+[2019-09-18T23:25:10+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+---------------------------------------------------------------
+[2019-09-18T23:25:10+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004877s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.008134s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` IN ('shop_logo','shop_name','shop_desc','store_switch','cate_style','cate_type','tocash_money_low','tocash_money_rate','point_switch','statistics_code','recommend_keys','invoice_switch','goods_stocks_warn','shop_default_image','shop_mobile','show_inviter','share_title','share_desc','share_image','about_article_id','ent_id') [ RunTime:0.005290s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.003187s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:10+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001476s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.003084s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.001292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001361s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.002331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.003365s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.002612s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.002948s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.002485s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.001832s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.001207s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000447s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:17+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001254s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods_cat` [ RunTime:0.007325s ]
+[ sql ] [ SQL ] SELECT `id`,`parent_id`,`name`,`sort`,`image_id` FROM `jshop_goods_cat` WHERE  `status` = 1 ORDER BY `sort` ASC [ RunTime:0.004688s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:17+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001045s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_advertisement` [ RunTime:0.015195s ]
+[ sql ] [ SQL ] SELECT `id`,`position_id`,`code`,`name`,`img`,`type`,`val`,`sort` FROM `jshop_advertisement` WHERE  `code` IN ('tpl1_class_banner1') ORDER BY `sort` ASC [ RunTime:0.004956s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:19+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000753s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005282s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.001776s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000398s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:22+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001871s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.010329s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.004235s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001239s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.004646s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.001492s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001234s ]
+---------------------------------------------------------------
+[2019-09-18T23:25:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/Api/index/index/method/categories.getallcat/backstage/1.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001354s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods_cat` [ RunTime:0.002590s ]
+[ sql ] [ SQL ] SELECT `id`,`parent_id`,`name`,`sort`,`image_id` FROM `jshop_goods_cat` ORDER BY `sort` ASC [ RunTime:0.000589s ]
+---------------------------------------------------------------
+[2019-09-18T23:26:16+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011601s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004588s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.002326s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002706s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.001391s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000531s ]
+---------------------------------------------------------------
+[2019-09-18T23:26:16+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000769s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.002264s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001882s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.003249s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.004017s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000446s ]
+---------------------------------------------------------------
+[2019-09-18T23:27:26+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010236s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003316s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001458s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.001754s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000603s ]
+---------------------------------------------------------------
+[2019-09-18T23:27:26+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001295s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.002046s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001834s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.002385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.001984s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000924s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.001665s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000487s ]
+---------------------------------------------------------------
+[2019-09-18T23:27:28+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000906s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002586s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002430s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000523s ]
+---------------------------------------------------------------
+[2019-09-18T23:27:28+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000725s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.001902s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001685s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.002934s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.001965s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.002063s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.001573s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000614s ]
+---------------------------------------------------------------
+[2019-09-18T23:30:41+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/Api/index/index/method/categories.getallcat/backstage/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001301s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods_cat` [ RunTime:0.001992s ]
+[ sql ] [ SQL ] SELECT `id`,`parent_id`,`name`,`sort`,`image_id` FROM `jshop_goods_cat` ORDER BY `sort` ASC [ RunTime:0.000696s ]
+---------------------------------------------------------------
+[2019-09-18T23:30:49+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/Api/index/index/method/categories.getallcat/backstage/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001086s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods_cat` [ RunTime:0.001785s ]
+[ sql ] [ SQL ] SELECT `id`,`parent_id`,`name`,`sort`,`image_id` FROM `jshop_goods_cat` ORDER BY `sort` ASC [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001855s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000500s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:27+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004143s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005837s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000966s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002355s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000464s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:27+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000576s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.001302s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001167s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.001247s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.001585s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000962s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.001598s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.001125s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:35+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000971s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001921s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002052s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000443s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:35+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000700s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages` [ RunTime:0.002719s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages` WHERE  `code` = 'mobile_home' LIMIT 1 [ RunTime:0.000956s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_pages_items` [ RunTime:0.001970s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_pages_items` WHERE  `page_code` = 'mobile_home' ORDER BY `sort` ASC [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_notice` [ RunTime:0.001983s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`ctime` FROM `jshop_notice` WHERE (  `type` = 1 ) AND `jshop_notice`.`isdel` IS NULL ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.002177s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`bn`,`brief`,`price`,`mktprice`,`image_id`,`goods_cat_id`,`goods_type_id`,`brand_id`,`is_nomal_virtual`,`marketable`,`stock`,`weight`,`unit`,`spes_desc`,`params`,`comments_count`,`view_count`,`buy_count`,`sort`,`is_recommend`,`is_hot`,`label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' ORDER BY `sort` ASC,`id` DESC LIMIT 0,10 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `label_ids` FROM `jshop_goods` `g` WHERE  `g`.`marketable` = '1' GROUP BY `label_ids` [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `g`.`brand_id`,`b`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_brand` `b` ON `b`.`id`=`g`.`brand_id` WHERE  `g`.`marketable` = '1'  AND `g`.`brand_id` <> '0' GROUP BY `g`.`brand_id` [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `g`.`goods_cat_id`,`gc`.`name` FROM `jshop_goods` `g` LEFT JOIN `jshop_goods_cat` `gc` ON `g`.`goods_cat_id`=`gc`.`id` WHERE  `g`.`marketable` = '1'  AND `g`.`goods_cat_id` <> '0' GROUP BY `goods_cat_id` [ RunTime:0.000567s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:40+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001404s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_advertisement` [ RunTime:0.004648s ]
+[ sql ] [ SQL ] SELECT `id`,`position_id`,`code`,`name`,`img`,`type`,`val`,`sort` FROM `jshop_advertisement` WHERE  `code` IN ('tpl1_class_banner1') ORDER BY `sort` ASC [ RunTime:0.002825s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:40+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003262s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods_cat` [ RunTime:0.004401s ]
+[ sql ] [ SQL ] SELECT `id`,`parent_id`,`name`,`sort`,`image_id` FROM `jshop_goods_cat` WHERE  `status` = 1 ORDER BY `sort` ASC [ RunTime:0.003100s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004781s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001377s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:42+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api/common/jshopconf
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000664s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002900s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SELECT `status` FROM `jshop_addons` WHERE  `name` = 'DistributionCenter' LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:52+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001725s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user` [ RunTime:0.002448s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user` WHERE (  `mobile` = '15021438357' ) AND `jshop_user`.`isdel` IS NULL LIMIT 1 [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_sms` [ RunTime:0.001375s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_sms` WHERE  `mobile` = '15021438357'  AND `code` = 'login'  AND `ctime` > 1568820112  AND `status` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000900s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_sms` (`mobile` , `code` , `params` , `content` , `ctime` , `ip` , `status`) VALUES ('15021438357' , 'login' , '{\"code\":608467}' , '您正在登陆账号，验证码是608467，请勿告诉他人。' , 1568820712 , '127.0.0.1' , 1) [ RunTime:0.000559s ]
+---------------------------------------------------------------
+[2019-09-18T23:31:57+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001892s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user` [ RunTime:0.002416s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user` WHERE (  `mobile` = '15021438357' ) AND `jshop_user`.`isdel` IS NULL LIMIT 1 [ RunTime:0.001049s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_sms` [ RunTime:0.001958s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_sms` WHERE  `mobile` = '15021438357'  AND `code` = 'login'  AND `ctime` > 1568820117  AND `status` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.001127s ]
+---------------------------------------------------------------
+[2019-09-18T23:32:03+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/api.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist

@@ -1,0 +1,5360 @@
+---------------------------------------------------------------
+[2019-09-20T12:51:35+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T12:51:35+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'page' => 1,
+  'limit' => 10,
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'user.goodsbrowsing',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:28+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:28+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'user.sharecode',
+)
+[ api ] array (
+  'status' => true,
+  'data' => 3705,
+  'msg' => '',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:28+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:34+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:34+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'user.sharecode',
+)
+[ api ] array (
+  'status' => true,
+  'data' => 3705,
+  'msg' => '',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:34+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:48+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'user.info',
+)
+[ api ] array (
+  'status' => true,
+  'data' => 
+  app\common\model\User::__set_state(array(
+     'deleteTime' => 'isdel',
+     'autoWriteTimestamp' => true,
+     'updateTime' => 'utime',
+     'rule' => 
+    array (
+      'mobile' => 
+      array (
+        'regex' => '^1[3|4|5|6|7|8|9][0-9]\\d{4,8}$',
+      ),
+      'sex' => 'in:1,2,3',
+      'nickname' => 'length:2,50',
+      'password' => 'length:6,20',
+      'p_mobile' => 
+      array (
+        'regex' => '^1[3|4|5|6|7|8|9][0-9]\\d{4,8}$',
+      ),
+    ),
+     'msg' => 
+    array (
+      'mobile' => '请输入一个合法的手机号码',
+      'sex' => '请选择合法的性别',
+      'nickname' => '昵称长度为2-50个字符',
+      'password' => '密码长度6-20位',
+      'p_mobile' => '邀请人栏请输入一个合法的手机号码',
+    ),
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'id',
+        1 => '=',
+        2 => 1,
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'User',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'username' => NULL,
+      'mobile' => '15021438357',
+      'sex' => 3,
+      'birthday' => NULL,
+      'avatar' => 'https://b2c.jihainet.com/static/images/default.png',
+      'nickname' => '15021****57',
+      'balance' => '0.00',
+      'point' => 0,
+      'grade' => 0,
+      'status' => 1,
+      'grade_name' => '',
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'username' => NULL,
+      'mobile' => '15021438357',
+      'sex' => 3,
+      'birthday' => NULL,
+      'avatar' => 'https://b2c.jihainet.com/static/images/default.png',
+      'nickname' => '15021****57',
+      'balance' => '0.00',
+      'point' => 0,
+      'grade' => 0,
+      'status' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'createTime' => 'create_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+     'withTrashed' => false,
+  )),
+  'msg' => '',
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:48+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'store.isclerk',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '未开启到店自提',
+  'data' => 
+  array (
+  ),
+  'flag' => false,
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:48+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'ids' => '1,2,3,4',
+  'isAfterSale' => true,
+  'token' => '76f1acc6a01d27a45fa55be83c44b5a1',
+  'method' => 'order.getorderstatusnum',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    1 => 0,
+    2 => 0,
+    3 => 0,
+    4 => 0,
+    'isAfterSale' => 0,
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T14:46:53+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T14:47:07+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'mobile' => '15021438357',
+  'code' => 'login',
+  'method' => 'user.sms',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '发送成功！',
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:39+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:40+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:45+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:45+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:47+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:47+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 13,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 14,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 15,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 16,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮1',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮2',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮3',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => '/static/images/empty.png',
+                'text' => '按钮4',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 17,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 18,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 19,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 20,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        8 => 
+        array (
+          'id' => 21,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 8,
+          'sort' => 9,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        9 => 
+        array (
+          'id' => 22,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 9,
+          'sort' => 10,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => '',
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        10 => 
+        array (
+          'id' => 23,
+          'widget_code' => 'imgSingle',
+          'page_code' => 'mobile_home',
+          'position_id' => 10,
+          'sort' => 11,
+          'params' => 
+          array (
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+                'buttonShow' => 'false',
+                'buttonText' => '',
+                'buttonColor' => '#FFFFFF',
+                'textColor' => '#000000',
+              ),
+            ),
+          ),
+        ),
+        11 => 
+        array (
+          'id' => 24,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 11,
+          'sort' => 12,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => '/static/images/empty-banner.png',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        12 => 
+        array (
+          'id' => 25,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 12,
+          'sort' => 13,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'square',
+          ),
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:48+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:37:48+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 1,
+      'name' => '手机',
+      'image_id' => '',
+      'image_url' => 'https://b2c.jihainet.com/static/images/default.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:33+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:33+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:33+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:36+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:36+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:36+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:47+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:47+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:39:47+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:40:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:40:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 1,
+      'name' => '手机',
+      'image_id' => '',
+      'image_url' => 'https://b2c.jihainet.com/static/images/default.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:40:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:42:46+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:42:46+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:42:46+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:12+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:12+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:12+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:54+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:55+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:43:55+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:44:14+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:44:14+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:44:14+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:07+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:07+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:07+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:39+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:39+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:45:39+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T15:47:44+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:47:44+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:47:45+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:49:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:49:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:49:11+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:50:26+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:50:26+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:50:26+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:13+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:13+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:14+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:25+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:25+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:51:25+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:52:04+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T15:52:05+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T15:52:05+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:42+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:42+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:42+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:55+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:55+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:08:55+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '',
+  'data' => 
+  array (
+    0 => 
+    array (
+      'id' => 35,
+      'name' => '户外出行',
+      'image_id' => '4dbd6aa799de94796be0d931d837b4e9',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688769315d832983724be.jpeg',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    1 => 
+    array (
+      'id' => 36,
+      'name' => '智能手机',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    2 => 
+    array (
+      'id' => 37,
+      'name' => '电脑平板',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'id' => 38,
+      'name' => '办公用品',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    4 => 
+    array (
+      'id' => 39,
+      'name' => '家电家居',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+    5 => 
+    array (
+      'id' => 40,
+      'name' => '二手3C',
+      'image_id' => '',
+      'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689642985d847ecac9886.png',
+      'sort' => 100,
+      'child' => 
+      array (
+      ),
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:10:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:10:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:10:19+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T16:14:01+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:14:01+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'categories.getallcat',
+)
+---------------------------------------------------------------
+[2019-09-20T16:14:01+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'codes' => 'tpl1_class_banner1',
+  'method' => 'advert.getcarousellists',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  array (
+    'list' => 
+    array (
+    ),
+  ),
+)
+---------------------------------------------------------------
+[2019-09-20T16:34:27+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:34:29+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 343,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 344,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883843706.jpg',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'url' => '',
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883846007.jpg',
+                'linkType' => 1,
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 345,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 346,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/46/1e/1c/5bd0271e3c8fa.jpg',
+                'text' => '旅行数码',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/97/06/7d/5bd0271e42170.jpg',
+                'text' => '按钮2',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/cd/5a/00/5bd0271e324f1.jpg',
+                'text' => '按钮3',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/09/e1/ce/5bd0271e5fa2d.jpg',
+                'text' => '按钮4',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 347,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => 34,
+            'brandId' => 18,
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 1,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 348,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'id' => 15,
+                'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                'bn' => 'G5689574199153',
+                'brief' => '',
+                'price' => '360.00',
+                'mktprice' => '0.00',
+                'image_id' => '32fb58c98fca4b09d66f65f9026074ec',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 23,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 40,
+                'weight' => '0.00',
+                'unit' => '',
+                'spes_desc' => 
+                array (
+                  '租期' => 
+                  array (
+                    36 => '5天',
+                    37 => '7天',
+                    38 => '14天',
+                    39 => '30天',
+                  ),
+                ),
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 0.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '大疆',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                'product' => 
+                array (
+                  'id' => 82,
+                  'goods_id' => 15,
+                  'barcode' => NULL,
+                  'sn' => 'P5689613095020',
+                  'price' => '360.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 10,
+                  'spes_desc' => '租期:30天',
+                  'is_defalut' => 1,
+                  'image_id' => '',
+                  'isdel' => NULL,
+                  'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                  'bn' => 'G5689574199153',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                  'total_stock' => 10,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'default_spes_desc' => 
+                  array (
+                    '租期' => 
+                    array (
+                      '5天' => 
+                      array (
+                        'name' => '5天',
+                        'product_id' => 79,
+                      ),
+                      '7天' => 
+                      array (
+                        'name' => '7天',
+                        'product_id' => 80,
+                      ),
+                      '14天' => 
+                      array (
+                        'name' => '14天',
+                        'product_id' => 81,
+                      ),
+                      '30天' => 
+                      array (
+                        'name' => '30天',
+                        'is_default' => true,
+                      ),
+                    ),
+                  ),
+                  'amount' => '360.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+              1 => 
+              array (
+                'id' => 14,
+                'name' => '旅行相机 运动相机',
+                'bn' => 'LV001',
+                'brief' => '旅行相机',
+                'price' => '0.00',
+                'mktprice' => '0.00',
+                'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 18,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 0,
+                'weight' => '1000.00',
+                'unit' => 'g',
+                'spes_desc' => '',
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 3.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '苹果',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                'product' => 
+                array (
+                  'id' => 83,
+                  'goods_id' => 14,
+                  'barcode' => NULL,
+                  'sn' => 'P5689663206632',
+                  'price' => '0.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 0,
+                  'spes_desc' => NULL,
+                  'is_defalut' => 1,
+                  'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                  'isdel' => NULL,
+                  'name' => '旅行相机 运动相机',
+                  'bn' => 'LV001',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  'total_stock' => 0,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'amount' => '0.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  1 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861395d834d7b0c955.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 349,
+          'widget_code' => 'blank',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'height' => 20,
+            'backgroundColor' => '#FFFFFF',
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 350,
+          'widget_code' => 'textarea',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => '<p>友情链接:<a href="https://m.kuaidi100.com/" target="_blank">快递查询</a></p>',
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T16:34:32+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:34:33+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 343,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 344,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883843706.jpg',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'url' => '',
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883846007.jpg',
+                'linkType' => 1,
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 345,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 346,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/46/1e/1c/5bd0271e3c8fa.jpg',
+                'text' => '旅行数码',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/97/06/7d/5bd0271e42170.jpg',
+                'text' => '按钮2',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/cd/5a/00/5bd0271e324f1.jpg',
+                'text' => '按钮3',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/09/e1/ce/5bd0271e5fa2d.jpg',
+                'text' => '按钮4',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 347,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => 34,
+            'brandId' => 18,
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 1,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 348,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'id' => 15,
+                'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                'bn' => 'G5689574199153',
+                'brief' => '',
+                'price' => '360.00',
+                'mktprice' => '0.00',
+                'image_id' => '32fb58c98fca4b09d66f65f9026074ec',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 23,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 40,
+                'weight' => '0.00',
+                'unit' => '',
+                'spes_desc' => 
+                array (
+                  '租期' => 
+                  array (
+                    36 => '5天',
+                    37 => '7天',
+                    38 => '14天',
+                    39 => '30天',
+                  ),
+                ),
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 0.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '大疆',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                'product' => 
+                array (
+                  'id' => 82,
+                  'goods_id' => 15,
+                  'barcode' => NULL,
+                  'sn' => 'P5689613095020',
+                  'price' => '360.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 10,
+                  'spes_desc' => '租期:30天',
+                  'is_defalut' => 1,
+                  'image_id' => '',
+                  'isdel' => NULL,
+                  'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                  'bn' => 'G5689574199153',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                  'total_stock' => 10,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'default_spes_desc' => 
+                  array (
+                    '租期' => 
+                    array (
+                      '5天' => 
+                      array (
+                        'name' => '5天',
+                        'product_id' => 79,
+                      ),
+                      '7天' => 
+                      array (
+                        'name' => '7天',
+                        'product_id' => 80,
+                      ),
+                      '14天' => 
+                      array (
+                        'name' => '14天',
+                        'product_id' => 81,
+                      ),
+                      '30天' => 
+                      array (
+                        'name' => '30天',
+                        'is_default' => true,
+                      ),
+                    ),
+                  ),
+                  'amount' => '360.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+              1 => 
+              array (
+                'id' => 14,
+                'name' => '旅行相机 运动相机',
+                'bn' => 'LV001',
+                'brief' => '旅行相机',
+                'price' => '0.00',
+                'mktprice' => '0.00',
+                'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 18,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 0,
+                'weight' => '1000.00',
+                'unit' => 'g',
+                'spes_desc' => '',
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 3.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '苹果',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                'product' => 
+                array (
+                  'id' => 83,
+                  'goods_id' => 14,
+                  'barcode' => NULL,
+                  'sn' => 'P5689663206632',
+                  'price' => '0.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 0,
+                  'spes_desc' => NULL,
+                  'is_defalut' => 1,
+                  'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                  'isdel' => NULL,
+                  'name' => '旅行相机 运动相机',
+                  'bn' => 'LV001',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  'total_stock' => 0,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'amount' => '0.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  1 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861395d834d7b0c955.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 349,
+          'widget_code' => 'blank',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'height' => 20,
+            'backgroundColor' => '#FFFFFF',
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 350,
+          'widget_code' => 'textarea',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => '<p>友情链接:<a href="https://m.kuaidi100.com/" target="_blank">快递查询</a></p>',
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)
+---------------------------------------------------------------
+[2019-09-20T16:35:03+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'method' => 'user.getarealist',
+)
+---------------------------------------------------------------
+[2019-09-20T16:35:04+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/api.html
+[ api ] array (
+  'code' => 'mobile_home',
+  'method' => 'pages.getpageconfig',
+)
+[ api ] array (
+  'status' => true,
+  'msg' => '获取成功',
+  'data' => 
+  app\common\model\Pages::__set_state(array(
+     'exists' => true,
+     'replace' => false,
+     'force' => false,
+     'updateWhere' => 
+    array (
+      0 => 
+      array (
+        0 => 'code',
+        1 => '=',
+        2 => 'mobile_home',
+      ),
+    ),
+     'connection' => 
+    array (
+    ),
+     'query' => NULL,
+     'name' => 'Pages',
+     'table' => NULL,
+     'auto' => 
+    array (
+    ),
+     'insert' => 
+    array (
+    ),
+     'update' => 
+    array (
+    ),
+     'queryInstance' => NULL,
+     'error' => NULL,
+     'defaultSoftDelete' => NULL,
+     'globalScope' => 
+    array (
+    ),
+     'pk' => 'id',
+     'field' => 
+    array (
+    ),
+     'json' => 
+    array (
+    ),
+     'jsonAssoc' => false,
+     'jsonType' => 
+    array (
+    ),
+     'disuse' => 
+    array (
+    ),
+     'readonly' => 
+    array (
+    ),
+     'type' => 
+    array (
+    ),
+     'data' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+      'items' => 
+      array (
+        0 => 
+        array (
+          'id' => 343,
+          'widget_code' => 'search',
+          'page_code' => 'mobile_home',
+          'position_id' => 0,
+          'sort' => 1,
+          'params' => 
+          array (
+            'keywords' => '请输入关键字搜索',
+            'style' => 'round',
+          ),
+        ),
+        1 => 
+        array (
+          'id' => 344,
+          'widget_code' => 'imgSlide',
+          'page_code' => 'mobile_home',
+          'position_id' => 1,
+          'sort' => 2,
+          'params' => 
+          array (
+            'duration' => 2500,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883843706.jpg',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'url' => '',
+                'image' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689667125d84883846007.jpg',
+                'linkType' => 1,
+              ),
+            ),
+          ),
+        ),
+        2 => 
+        array (
+          'id' => 345,
+          'widget_code' => 'notice',
+          'page_code' => 'mobile_home',
+          'position_id' => 2,
+          'sort' => 3,
+          'params' => 
+          array (
+            'type' => 'auto',
+            'list' => 
+            think\model\Collection::__set_state(array(
+               'items' => 
+              array (
+              ),
+            )),
+          ),
+        ),
+        3 => 
+        array (
+          'id' => 346,
+          'widget_code' => 'navBar',
+          'page_code' => 'mobile_home',
+          'position_id' => 3,
+          'sort' => 4,
+          'params' => 
+          array (
+            'limit' => 4,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/46/1e/1c/5bd0271e3c8fa.jpg',
+                'text' => '旅行数码',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              1 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/97/06/7d/5bd0271e42170.jpg',
+                'text' => '按钮2',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              2 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/cd/5a/00/5bd0271e324f1.jpg',
+                'text' => '按钮3',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+              3 => 
+              array (
+                'image' => 'https://b2c.jihainet.com/static/uploads/09/e1/ce/5bd0271e5fa2d.jpg',
+                'text' => '按钮4',
+                'linkType' => 1,
+                'linkValue' => '',
+              ),
+            ),
+          ),
+        ),
+        4 => 
+        array (
+          'id' => 347,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 4,
+          'sort' => 5,
+          'params' => 
+          array (
+            'title' => '热门商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => 34,
+            'brandId' => 18,
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 1,
+            'list' => 
+            array (
+            ),
+          ),
+        ),
+        5 => 
+        array (
+          'id' => 348,
+          'widget_code' => 'goods',
+          'page_code' => 'mobile_home',
+          'position_id' => 5,
+          'sort' => 6,
+          'params' => 
+          array (
+            'title' => '推荐商品',
+            'lookMore' => 'true',
+            'type' => 'auto',
+            'classifyId' => '',
+            'brandId' => '',
+            'limit' => 10,
+            'display' => 'list',
+            'column' => 2,
+            'list' => 
+            array (
+              0 => 
+              array (
+                'id' => 15,
+                'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                'bn' => 'G5689574199153',
+                'brief' => '',
+                'price' => '360.00',
+                'mktprice' => '0.00',
+                'image_id' => '32fb58c98fca4b09d66f65f9026074ec',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 23,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 40,
+                'weight' => '0.00',
+                'unit' => '',
+                'spes_desc' => 
+                array (
+                  '租期' => 
+                  array (
+                    36 => '5天',
+                    37 => '7天',
+                    38 => '14天',
+                    39 => '30天',
+                  ),
+                ),
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 0.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '大疆',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                'product' => 
+                array (
+                  'id' => 82,
+                  'goods_id' => 15,
+                  'barcode' => NULL,
+                  'sn' => 'P5689613095020',
+                  'price' => '360.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 10,
+                  'spes_desc' => '租期:30天',
+                  'is_defalut' => 1,
+                  'image_id' => '',
+                  'isdel' => NULL,
+                  'name' => '租赁灵眸运动相机 双彩屏 超强增稳 超清画质 裸机防水',
+                  'bn' => 'G5689574199153',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                  'total_stock' => 10,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'default_spes_desc' => 
+                  array (
+                    '租期' => 
+                    array (
+                      '5天' => 
+                      array (
+                        'name' => '5天',
+                        'product_id' => 79,
+                      ),
+                      '7天' => 
+                      array (
+                        'name' => '7天',
+                        'product_id' => 80,
+                      ),
+                      '14天' => 
+                      array (
+                        'name' => '14天',
+                        'product_id' => 81,
+                      ),
+                      '30天' => 
+                      array (
+                        'name' => '30天',
+                        'is_default' => true,
+                      ),
+                    ),
+                  ),
+                  'amount' => '360.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/20/15689568825d8461d2462d4.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+              1 => 
+              array (
+                'id' => 14,
+                'name' => '旅行相机 运动相机',
+                'bn' => 'LV001',
+                'brief' => '旅行相机',
+                'price' => '0.00',
+                'mktprice' => '0.00',
+                'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                'goods_cat_id' => 35,
+                'goods_type_id' => 4,
+                'brand_id' => 18,
+                'is_nomal_virtual' => 1,
+                'marketable' => 1,
+                'stock' => 0,
+                'weight' => '1000.00',
+                'unit' => 'g',
+                'spes_desc' => '',
+                'params' => 'a:0:{}',
+                'comments_count' => 0,
+                'view_count' => 0,
+                'buy_count' => 3.0,
+                'sort' => 100,
+                'is_recommend' => 1,
+                'is_hot' => 1,
+                'label_ids' => 
+                array (
+                ),
+                'brand_name' => '苹果',
+                'cat_name' => '户外出行',
+                'image_url' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                'product' => 
+                array (
+                  'id' => 83,
+                  'goods_id' => 14,
+                  'barcode' => NULL,
+                  'sn' => 'P5689663206632',
+                  'price' => '0.00',
+                  'mktprice' => '0.00',
+                  'marketable' => 1,
+                  'stock' => 0,
+                  'spes_desc' => NULL,
+                  'is_defalut' => 1,
+                  'image_id' => '1399cff617e8042ee4ecb93f6eda7401',
+                  'isdel' => NULL,
+                  'name' => '旅行相机 运动相机',
+                  'bn' => 'LV001',
+                  'image_path' => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  'total_stock' => 0,
+                  'grade_price' => 
+                  array (
+                  ),
+                  'grade_info' => 
+                  array (
+                  ),
+                  'amount' => '0.00',
+                  'promotion_list' => 
+                  array (
+                  ),
+                  'promotion_amount' => 0,
+                ),
+                'album' => 
+                array (
+                  0 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861385d834d7a0e0dd.jpg',
+                  1 => 'http://shop.yoo-woo.com:80/static/uploads/images/2019/09/19/15688861395d834d7b0c955.jpg',
+                ),
+                'isfav' => 'false',
+              ),
+            ),
+          ),
+        ),
+        6 => 
+        array (
+          'id' => 349,
+          'widget_code' => 'blank',
+          'page_code' => 'mobile_home',
+          'position_id' => 6,
+          'sort' => 7,
+          'params' => 
+          array (
+            'height' => 20,
+            'backgroundColor' => '#FFFFFF',
+          ),
+        ),
+        7 => 
+        array (
+          'id' => 350,
+          'widget_code' => 'textarea',
+          'page_code' => 'mobile_home',
+          'position_id' => 7,
+          'sort' => 8,
+          'params' => '<p>友情链接:<a href="https://m.kuaidi100.com/" target="_blank">快递查询</a></p>',
+        ),
+      ),
+    ),
+     'set' => 
+    array (
+    ),
+     'origin' => 
+    array (
+      'id' => 1,
+      'code' => 'mobile_home',
+      'name' => '移动端首页',
+      'desc' => '移动端首页相关操作，可视化移动端、小程序端首页布局',
+      'layout' => 1,
+      'type' => 1,
+    ),
+     'withAttr' => 
+    array (
+    ),
+     'parent' => NULL,
+     'relation' => 
+    array (
+    ),
+     'together' => NULL,
+     'relationWrite' => NULL,
+     'observerClass' => NULL,
+     'withEvent' => true,
+     'autoWriteTimestamp' => false,
+     'createTime' => 'create_time',
+     'updateTime' => 'update_time',
+     'dateFormat' => false,
+     'visible' => 
+    array (
+    ),
+     'hidden' => 
+    array (
+    ),
+     'append' => 
+    array (
+    ),
+     'resultSetType' => 'collection',
+  )),
+)

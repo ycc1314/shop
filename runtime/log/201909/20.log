@@ -1,0 +1,714 @@
+---------------------------------------------------------------
+[2019-09-20T11:36:45+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage
+[ sql ] [ DB ] CONNECT:[ UseTime:0.024981s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.025425s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.004406s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `perm_type` = 1 ORDER BY `sort` ASC [ RunTime:0.007016s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` [ RunTime:0.002893s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:45+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/index/welcome.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001225s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005557s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_order` [ RunTime:0.004644s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 1  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.001654s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 2  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_aftersales` [ RunTime:0.002323s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_bill_aftersales` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.001360s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.004369s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` LIMIT 1 [ RunTime:0.003763s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 1 LIMIT 1 [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 2 LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'goods_stocks_warn' LIMIT 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_products` [ RunTime:0.003573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(id) AS think_count FROM `jshop_products` WHERE  ( IF(stock < freeze_stock, 0, stock - freeze_stock)<10 ) GROUP BY `goods_id` ) `_group_count_` LIMIT 1 [ RunTime:0.001952s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/order/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001805s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002688s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001145s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_payments` [ RunTime:0.001681s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_payments` WHERE  `status` = 2  AND `type` = 1  AND ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.006323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_delivery` [ RunTime:0.003097s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_delivery` WHERE  ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.001548s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002106s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005891s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002042s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002924s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'jshop.jshop_user_log.state' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+---------------------------------------------------------------
+[2019-09-20T11:36:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/administrator/getversion.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000927s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005320s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001254s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/userloglist/state/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000742s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002770s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001256s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002097s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_user_log` LIMIT 1 [ RunTime:0.002870s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user_log` ORDER BY `ctime` DESC LIMIT 0,10 [ RunTime:0.001399s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:46+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/getlastlog.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000803s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002922s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001127s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation_log` LIMIT 1 [ RunTime:0.002588s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation_log` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_manage` [ RunTime:0.002210s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000327s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000564s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:57+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000930s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002966s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001382s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:57+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000758s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001711s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000460s ]
+---------------------------------------------------------------
+[2019-09-20T11:36:57+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000657s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002338s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002363s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` IN ('Aliyunsms','Appletmessage','Demo','Distribution','KdniaoExpress','MPAlipay','Mms1086','SendLinkSms') [ RunTime:0.005428s ]
+---------------------------------------------------------------
+[2019-09-20T11:37:05+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/manage/addons/install.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000826s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004335s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000847s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.002320s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'c'  AND `code` = 'addons'  AND `parent_id` = 2 LIMIT 1 [ RunTime:0.003315s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'a'  AND `code` = 'install'  AND `parent_id` = 464 LIMIT 1 [ RunTime:0.001223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001909s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_operation_log` (`manage_id` , `controller` , `method` , `desc` , `content` , `ip` , `ctime`) VALUES (13 , 'addons' , 'install' , '安装插件：MPAlipay' , '{\"name\":\"MPAlipay\"}' , '127.0.0.1' , 1568950625) [ RunTime:0.013270s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.004184s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_addons` (`name` , `title` , `description` , `status` , `author` , `version` , `ctime` , `utime`) VALUES ('MPAlipay' , '支付宝小程序插件' , '安装后可使用支付宝小程序' , 1 , 'mark' , '0.1' , 1568950625 , 1568950625) [ RunTime:0.002925s ]
+[ sql ] [ SQL ] UPDATE `jshop_addons`  SET `config` = '{\"mp_alipay_appid\":\"\"}' , `utime` = 1568950625  WHERE  `id` = 2 [ RunTime:0.007106s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_hooks` [ RunTime:0.004442s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_hooks` [ RunTime:0.000782s ]
+---------------------------------------------------------------
+[2019-09-20T11:37:07+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001131s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_hooks` [ RunTime:0.003568s ]
+[ sql ] [ SQL ] SELECT `name`,`addons` FROM `jshop_hooks` [ RunTime:0.004530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.001640s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.001044s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000964s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000295s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('') [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SELECT `name` FROM `jshop_addons` WHERE  `status` = 1  AND `name` IN ('sendLinkSms') [ RunTime:0.000277s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002621s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` IN ('Aliyunsms','Appletmessage','Demo','Distribution','KdniaoExpress','MPAlipay','Mms1086','SendLinkSms') [ RunTime:0.000720s ]
+---------------------------------------------------------------
+[2019-09-20T11:37:09+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/manage/addons/setting.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]未定义数组索引: dialog_width
+[ error ] [8]未定义数组索引: dialog_height
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000807s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004800s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.001534s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'c'  AND `code` = 'addons'  AND `parent_id` = 2 LIMIT 1 [ RunTime:0.001550s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'a'  AND `code` = 'setting'  AND `parent_id` = 464 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001432s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_operation_log` (`manage_id` , `controller` , `method` , `desc` , `content` , `ip` , `ctime`) VALUES (13 , 'addons' , 'setting' , '插件配置：MPAlipay' , '{\"name\":\"MPAlipay\"}' , '127.0.0.1' , 1568950629) [ RunTime:0.003901s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.003365s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` = 'MPAlipay' LIMIT 1 [ RunTime:0.000803s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:00+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/manage/addons/dosetting.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002890s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.015499s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.003690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.002240s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'c'  AND `code` = 'addons'  AND `parent_id` = 2 LIMIT 1 [ RunTime:0.007110s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'a'  AND `code` = 'dosetting'  AND `parent_id` = 464 LIMIT 1 [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.002521s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_operation_log` (`manage_id` , `controller` , `method` , `desc` , `content` , `ip` , `ctime`) VALUES (13 , 'addons' , 'dosetting' , '保存配置：MPAlipay' , '{\"setting\":{\"mp_alipay_appid\":\"2019092067626247\"},\"name\":\"MPAlipay\"}' , '127.0.0.1' , 1568950680) [ RunTime:0.004641s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.005598s ]
+[ sql ] [ SQL ] UPDATE `jshop_addons`  SET `config` = '{\"mp_alipay_appid\":\"2019092067626247\"}'  WHERE  `id` = 2 [ RunTime:0.004544s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:02+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000909s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003330s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.003568s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002869s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` IN ('Aliyunsms','Appletmessage','Demo','Distribution','KdniaoExpress','MPAlipay','Mms1086','SendLinkSms') [ RunTime:0.002366s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:08+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001557s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003976s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002238s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:08+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000500s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001839s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000437s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:08+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001204s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002237s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_message_center` [ RunTime:0.003665s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_message_center` [ RunTime:0.005756s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:09+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/setting/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000841s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004300s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.001994s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001218s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001935s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000488s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:09+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/setting/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001219s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002482s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:09+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950689887
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000967s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003866s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000511s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:09+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950689888
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001739s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003254s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.006643s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:09+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950689907
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014955s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003569s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000547s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:10+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001549s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003075s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001182s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001409s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002530s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001290s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/index.html?page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000896s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002269s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_images` [ RunTime:0.007691s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_images` LIMIT 1 [ RunTime:0.004942s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_images` ORDER BY `ctime` DESC LIMIT 0,20 [ RunTime:0.001311s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950691109
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001406s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001965s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000453s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/ietask/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001577s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002217s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000604s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/ietask/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002352s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000597s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:11+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/ietask/index.html?page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000971s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005059s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_ietask` [ RunTime:0.001838s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_ietask` LIMIT 1 [ RunTime:0.001337s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_ietask` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.002156s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:13+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000834s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003103s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000475s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:13+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001821s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002637s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000452s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:13+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation/index.html?_ajax=1&page=1&limit=2000
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001706s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001840s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.001418s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation` WHERE  `parent_id` = 2 LIMIT 1 [ RunTime:0.002603s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `parent_id` = 2 LIMIT 0,2000 [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `id` IN (2) [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `id` IN (2,356) [ RunTime:0.003205s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000395s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:14+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000917s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002337s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001237s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:14+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001124s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001987s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000488s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:14+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000928s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003003s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001824s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation_log` LIMIT 1 [ RunTime:0.002344s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation_log` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_manage` [ RunTime:0.002833s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001410s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000303s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001349s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000310s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/setting/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002135s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002588s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002652s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.001029s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/setting/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000741s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001787s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000388s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950695472
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000731s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001585s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000617s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950695480
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000629s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002896s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000321s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/images/manage.html?action=config&&noCache=1568950695472
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000783s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002315s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000350s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:17+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000859s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004848s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000488s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:17+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001358s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002063s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000558s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:18+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/message_center/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001189s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004937s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_message_center` [ RunTime:0.001585s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_message_center` [ RunTime:0.001230s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:19+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001288s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004120s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000771s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:19+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001003s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001728s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000625s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:19+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001880s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001628s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.001631s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` IN ('Aliyunsms','Appletmessage','Demo','Distribution','KdniaoExpress','MPAlipay','Mms1086','SendLinkSms') [ RunTime:0.001537s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:32+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/hooks/index.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002017s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000587s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:32+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/hooks/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000642s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002027s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000554s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:32+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/hooks/index.html?page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000855s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002101s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_hooks` [ RunTime:0.002869s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_hooks` LIMIT 1 [ RunTime:0.003901s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_hooks` LIMIT 0,20 [ RunTime:0.000724s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:34+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/hooks/index.html?page=2&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001454s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002150s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_hooks` [ RunTime:0.001551s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_hooks` LIMIT 1 [ RunTime:0.001897s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_hooks` LIMIT 20,20 [ RunTime:0.000854s ]
+---------------------------------------------------------------
+[2019-09-20T11:38:40+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/hooks/index.html?page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000627s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001853s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_hooks` [ RunTime:0.002877s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_hooks` LIMIT 1 [ RunTime:0.002892s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_hooks` LIMIT 0,20 [ RunTime:0.001761s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000941s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002779s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.001816s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` [ RunTime:0.004425s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/index/welcome.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000988s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002043s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_order` [ RunTime:0.004015s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 1  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.001165s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 2  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_aftersales` [ RunTime:0.002154s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_bill_aftersales` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.002679s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.002757s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` LIMIT 1 [ RunTime:0.003519s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 1 LIMIT 1 [ RunTime:0.003710s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 2 LIMIT 1 [ RunTime:0.001947s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'goods_stocks_warn' LIMIT 1 [ RunTime:0.001970s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_products` [ RunTime:0.002851s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(id) AS think_count FROM `jshop_products` WHERE  ( IF(stock < freeze_stock, 0, stock - freeze_stock)<10 ) GROUP BY `goods_id` ) `_group_count_` LIMIT 1 [ RunTime:0.002328s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006550s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003624s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002992s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'jshop.jshop_user_log.state' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/order/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002389s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003326s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001066s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_payments` [ RunTime:0.005460s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_payments` WHERE  `status` = 2  AND `type` = 1  AND ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.003558s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_delivery` [ RunTime:0.002870s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_delivery` WHERE  ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.000671s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/administrator/getversion.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002645s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004782s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000578s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/userloglist/state/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001891s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002568s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.003845s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_user_log` LIMIT 1 [ RunTime:0.002810s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user_log` ORDER BY `ctime` DESC LIMIT 0,10 [ RunTime:0.000706s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:04+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/getlastlog.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000815s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001654s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001655s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation_log` LIMIT 1 [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation_log` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_manage` [ RunTime:0.002388s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001757s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001357s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.001285s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000391s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/wechat/edit.html
+[ error ] [8]serialize(): &quot;controller&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]serialize(): &quot;actionName&quot; returned as member variable from __sleep() but does not exist
+[ error ] [8]未定义数组索引: wx_head_img
+[ error ] [8]未定义数组索引: wx_head_img
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000826s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001923s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000387s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:15+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/wechat/edit.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001378s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_default_image' LIMIT 1 [ RunTime:0.000481s ]
+[ error ] [8]未定义数组索引: wx_head_img
+[ error ] [8]未定义数组索引: wx_head_img
+---------------------------------------------------------------
+[2019-09-20T11:39:28+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001064s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.003351s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000671s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:28+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001217s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.001571s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000477s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:28+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/addons/index.html?_ajax=1&page=1&limit=20
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000922s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002475s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.002257s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` IN ('Aliyunsms','Appletmessage','Demo','Distribution','KdniaoExpress','MPAlipay','Mms1086','SendLinkSms') [ RunTime:0.001029s ]
+---------------------------------------------------------------
+[2019-09-20T11:39:30+08:00] 127.0.0.1 POST shoping.wufumoney.com:8098/manage/addons/setting.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001268s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002955s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.001670s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'c'  AND `code` = 'addons'  AND `parent_id` = 2 LIMIT 1 [ RunTime:0.007085s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `type` = 'a'  AND `code` = 'setting'  AND `parent_id` = 464 LIMIT 1 [ RunTime:0.001757s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.002670s ]
+[ sql ] [ SQL ] INSERT INTO `jshop_operation_log` (`manage_id` , `controller` , `method` , `desc` , `content` , `ip` , `ctime`) VALUES (13 , 'addons' , 'setting' , '插件配置：MPAlipay' , '{\"name\":\"MPAlipay\"}' , '127.0.0.1' , 1568950770) [ RunTime:0.004690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_addons` [ RunTime:0.003966s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_addons` WHERE  `name` = 'MPAlipay' LIMIT 1 [ RunTime:0.001097s ]
+[ error ] [8]未定义数组索引: dialog_width
+[ error ] [8]未定义数组索引: dialog_height
+---------------------------------------------------------------
+[2019-09-20T13:00:36+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005256s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.016816s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.006461s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` WHERE  `perm_type` = 1 ORDER BY `sort` ASC [ RunTime:0.006722s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` [ RunTime:0.002299s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:36+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/index/welcome.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006505s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.012259s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.002214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_order` [ RunTime:0.003270s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 1  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.008373s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 2  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.001409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_aftersales` [ RunTime:0.007090s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_bill_aftersales` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.004135s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.005247s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` LIMIT 1 [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 1 LIMIT 1 [ RunTime:0.000994s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 2 LIMIT 1 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'goods_stocks_warn' LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_products` [ RunTime:0.005600s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(id) AS think_count FROM `jshop_products` WHERE  ( IF(stock < freeze_stock, 0, stock - freeze_stock)<10 ) GROUP BY `goods_id` ) `_group_count_` LIMIT 1 [ RunTime:0.001645s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:36+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/userloglist/state/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002822s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.005024s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002700s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_user_log` LIMIT 1 [ RunTime:0.005295s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user_log` ORDER BY `ctime` DESC LIMIT 0,10 [ RunTime:0.000875s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:37+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/administrator/getversion.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002374s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004624s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000778s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:37+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/getlastlog.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003133s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004468s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.002304s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation_log` LIMIT 1 [ RunTime:0.001802s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation_log` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_manage` [ RunTime:0.002739s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:37+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001170s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002975s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002109s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'jshop.jshop_user_log.state' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+---------------------------------------------------------------
+[2019-09-20T13:00:37+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/order/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000906s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004882s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_payments` [ RunTime:0.001447s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_payments` WHERE  `status` = 2  AND `type` = 1  AND ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.004775s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_delivery` [ RunTime:0.002639s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_delivery` WHERE  ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.001186s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:38+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004619s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004886s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.001137s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation` [ RunTime:0.001551s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation` [ RunTime:0.001395s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:38+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/index/welcome.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000690s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004915s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_order` [ RunTime:0.002985s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 1  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.004686s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_order` WHERE (  `status` = 1  AND `pay_status` = 2  AND `ship_status` = 1 ) AND `jshop_order`.`isdel` IS NULL LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_aftersales` [ RunTime:0.002482s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_bill_aftersales` WHERE  `status` = 1 LIMIT 1 [ RunTime:0.002970s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_goods` [ RunTime:0.002799s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` LIMIT 1 [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 1 LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT COUNT(`id`) AS tp_count FROM `jshop_goods` WHERE  `marketable` = 2 LIMIT 1 [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'goods_stocks_warn' LIMIT 1 [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_products` [ RunTime:0.002571s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(id) AS think_count FROM `jshop_products` WHERE  ( IF(stock < freeze_stock, 0, stock - freeze_stock)<10 ) GROUP BY `goods_id` ) `_group_count_` LIMIT 1 [ RunTime:0.003174s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:38+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000659s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.004517s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002364s ]
+[ error ] [10501]SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'jshop.jshop_user_log.state' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+---------------------------------------------------------------
+[2019-09-20T13:00:38+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/order/statistics.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000576s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002260s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_payments` [ RunTime:0.001736s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_payments` WHERE  `status` = 2  AND `type` = 1  AND ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.006706s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_bill_delivery` [ RunTime:0.002356s ]
+[ sql ] [ SQL ] SELECT count(1) AS `nums`,DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") AS `day` FROM `jshop_bill_delivery` WHERE  ( FROM_UNIXTIME(ctime) >= 2019-09-13 ) GROUP BY DATE_FORMAT(FROM_UNIXTIME(ctime),"%Y-%m-%d") [ RunTime:0.002624s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:39+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/administrator/getversion.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001446s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002826s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000643s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:39+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/user/userloglist/state/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000637s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002194s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_user_log` [ RunTime:0.002270s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_user_log` LIMIT 1 [ RunTime:0.002833s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_user_log` ORDER BY `ctime` DESC LIMIT 0,10 [ RunTime:0.000442s ]
+---------------------------------------------------------------
+[2019-09-20T13:00:39+08:00] 127.0.0.1 GET shoping.wufumoney.com:8098/manage/operation_log/getlastlog.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000742s ] mysql:host=127.0.0.1;port=3306;dbname=jshop;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_setting` [ RunTime:0.002179s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_setting` WHERE  `skey` = 'shop_name' LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_operation_log` [ RunTime:0.001083s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `jshop_operation_log` LIMIT 1 [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_operation_log` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.001159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `jshop_manage` [ RunTime:0.001918s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.003779s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.002039s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SELECT * FROM `jshop_manage` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000454s ]

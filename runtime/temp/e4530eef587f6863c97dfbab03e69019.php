@@ -1,0 +1,483 @@
+<?php /*a:2:{s:73:"/Users/seven/feisujie-master/shop/application/manage/view/user/index.html";i:1567760372;s:69:"/Users/seven/feisujie-master/shop/application/manage/view/layout.html";i:1567760372;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><?php echo htmlentities($shop_name); ?>管理平台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css" media="all"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/iconfont2.css"/> -->
+
+    <link rel="stylesheet" href="/static/lib/layuiadmin/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/lib/layuiadmin/style/admin.css" media="all">
+
+    <link rel="stylesheet" href="/static/lib/layuiadmin/layui/css/layui.seller.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <script src="/static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/lib/layuiadmin/layui/layui.js"></script>
+
+    <script>
+        <!-- 定义全局变量 -->
+        var Jshop_Host = "<?php echo htmlentities($jshopHost); ?>";
+        var Jshop_Image = "<?php echo url('images/uploadImage'); ?>";
+        var manage_Image = "<?php echo url('images/manage'); ?>";
+    </script>
+    <script src="/static/js/jshop.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/js/ue/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/static/js/ue/ueditor.all.min.js"> </script>
+</head>
+<body>
+<div class="layui-fluid">
+    <style>
+    @media screen and (max-width: 500px) {
+        .layui-layer.layui-layer-page {
+            width: 100% !important;
+            overflow-x: scroll !important;
+            left: 0 !important;
+        }
+        .layui-layer-title {
+            width: 100% !important;
+            box-sizing: border-box;
+        }
+        .layui-layer-content {
+            width: 100% !important;
+        }
+    }
+</style>
+<form class="layui-form seller-form" action="">
+    <div class="layui-form-item">
+        <div class="layui-inline" style="display:none;">
+            <label class="layui-form-label">账号：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" lay-verify="title" style="width:100px;" placeholder="请输入账号"
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">手机号码：</label>
+            <div class="layui-input-inline seller-inline-3">
+                <input type="text" name="mobile" lay-verify="title" placeholder="请输入手机号码" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">性别：</label>
+            <div class="layui-input-inline seller-inline-2">
+                <select name="sex" lay-verify="">
+                    <option value=""></option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                    <option value="3">其他</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">昵称：</label>
+            <div class="layui-input-inline seller-inline-2">
+                <input type="text" name="nickname" lay-verify="title" placeholder="用户昵称" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">状态：</label>
+            <div class="layui-input-inline seller-inline-3">
+                <select name="status" lay-verify="">
+                    <option value=""></option>
+                    <option value="1">正常</option>
+                    <option value="2">停用</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">推荐人：</label>
+            <div class="layui-input-inline seller-inline-3">
+                <input type="text" name="pmobile" lay-verify="title" placeholder="推荐人手机号" autocomplete="off"
+                    class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <!--<div class="layui-input-block">-->
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="user-search"><i
+                    class="iconfont icon-chaxun"></i>筛选</button>
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="user-add"><i
+                    class="layui-icon">&#xe608;</i>添加</button>
+            <!--</div>-->
+        </div>
+        <div class="layui-inline">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="export-user"><i
+                    class="iconfont icon-msnui-cloud-download" style="font-size: 20px !important;"></i>导出</button>
+        </div>
+        <div class="layui-inline">
+            <button type="button" class="layui-btn layui-btn-sm" lay-submit lay-filter="import-user"><i
+                    class="layui-icon"></i>导入</button>
+        </div>
+        <div class="layui-inline">
+            <button type="button" class="layui-btn layui-btn-sm layui-btn-danger " lay-submit lay-filter="delete-user">删除</button>
+        </div>
+    </div>
+</form>
+
+<div class="table-body">
+    <table id="userTable" lay-filter="test"></table>
+</div>
+
+<div id="exportUser" style="display: none;">
+    <form class="layui-form export-form" action="">
+        <div class="layui-form-item">
+            <div class="layui-margin-10">
+                <blockquote class="layui-elem-quote layui-text">
+                    请先筛选要导出的会员，默认导出全部
+                </blockquote>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">任务名称：</label>
+                <input type="text" name="taskname" lay-verify="title" style="width:200px;" placeholder="请输入任务名称"
+                    autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="importUser" style="display: none;">
+    <form class="layui-form import-form" method="post" action="<?php echo url('ietask/import'); ?>" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <div class="layui-margin-10">
+                <blockquote class="layui-elem-quote layui-text">
+                    请先下载<a href="<?php echo url('ietask/importTemplete',['tplName'=>'user']); ?>">导入模板</a>
+                </blockquote>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">
+                    <input type="file" class="layui-file" name="importFile" id="importFile">
+                    <input type="hidden" name="model" value="User">
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="/static/js/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var table, window_box;
+    layui.use(['form', 'layedit', 'laydate', 'table'], function () {
+        table = layui.table.render({
+            elem: '#userTable',
+            height: 'full-139',
+            cellMinWidth: '80',
+            page: 'true',
+            limit: '20',
+            url: "<?php echo url('user/index'); ?>?_ajax=1",
+            id: 'userTable',
+            cols: [[
+                {type:'checkbox'},
+                {
+                    field: 'option', title: '操作', templet: function (d) {
+                        var html = '<a class="layui-btn layui-btn-xs edit" data-id="' + d.id + '">修改</a>';
+                        html += '<a class="layui-btn layui-btn-xs editMoney" data-id="' + d.id + '">修改余额</a>';
+                        html += '<span class="layui-btn layui-btn-xs pointEdit" data-id="' + d.id + '">积分修改</span>';
+                        return html;
+
+
+                    }, align: 'center', width: 200
+                },
+                { field: 'id', title: 'ID', width:80 },
+                { field: 'mobile', title: '手机号码', width: 150 },
+                { field: 'grade_name', title: '等级', width: 150 },
+                { field: 'sex', title: '性别' },
+                { field: 'birthday', title: '生日', width: 150 },
+                {
+                    field: 'avatar', title: '头像',
+                    templet: function (d) {
+                        if (d.avatar) {
+                            return '<a href="javascript:void(0);" onclick=viewImage("' + d.avatar + '")><image style="max-width:30px;max-height:30px;" src="' + d.avatar + '"/></a>';
+                        } else {
+                            return '<a href="javascript:void(0);" onclick=viewImage("<?php echo config('jshop.default_image'); ?>")><image style="max-width:30px;max-height:30px;" src="<?php echo config('jshop.default_image');?>"/></a>';
+                        }
+                    }, width: 80
+                },
+                { field: 'nickname', title: '昵称' },
+                {
+                    title: '余额', templet: function (data) {
+                        var html = '<a class="link-hot option-show balance" data-id="' + data.id + '">' + data.balance + '</a>';
+                        return html;
+                    }
+                },
+                {
+                    title: '积分', templet: function (data) {
+                        var html = '<a class="link-hot option-show point" data-id="' + data.id + '">' + data.point + '</a>';
+                        return html;
+                    }
+                },
+                { field: 'status', title: '状态' },
+                { field: 'pid_name', title: '邀请人' },
+                { field: 'ctime', title: '创建时间', width: 200 }
+            ]]
+        });
+        //搜索
+        layui.form.on('submit(user-search)', function (data) {
+            layui.table.reload('userTable', {
+                where: data.field
+                , page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+        //删除用户
+        layui.form.on('submit(delete-user)', function (data) {
+            var checkStatus = layui.table.checkStatus('userTable');
+            var checkData = checkStatus.data;
+            var operate = data.value;
+            var length = checkStatus.data.length;
+            if (length <= 0) {
+                layer.msg("请先选要操作的数据");
+                return false;
+            }
+            var ids = [];
+            $.each(checkData, function (i, obj) {
+                ids.push(obj.id);
+            });
+            layer.confirm('确认删除选中商品吗？', {
+                title: '提示', btn: ['确认', '取消'] //按钮
+            }, function () {
+                JsPost("<?php echo url('User/delUser'); ?>", {'ids': ids}, function (res) {
+                        if (res.status) {
+                            layer.msg(res.msg);
+                            layui.table.reload('userTable');
+                        } else {
+                            layer.msg(res.msg);
+                        }
+
+                    }
+                );
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+        //积分编辑
+        $(document).on('click', '.pointEdit', function () {
+            var id = $(this).attr('data-id');
+            JsGet("<?php echo url('manage/user/editPoint'); ?>?user_id="+id+"&flag=false", function(e){
+                if(e.status){
+                    layer.open({
+                        type: 1,
+                        title: '修改用户积分',
+                        area: ['450px', '300px'], //宽高
+                        content: e.data
+                    });
+                }else{
+                    layer.msg(e.msg);
+                }
+            });
+        });
+        //保存积分
+        $(document).on('click', '.edit-point-save', function () {
+            var user_id = $("#user_id").val();
+            var point = $("#point").val();
+            var memo = $("#memo").val();
+            var __Jshop_Token__ = $(".Jshop_Token:last").val();
+            if ($.trim(point) == '') {
+                layer.msg('积分变更不能为空');
+            }
+            JsPost("<?php echo url('manage/user/editPoint'); ?>", {
+                'user_id': user_id,
+                'flag': 'true',
+                'point': point,
+                'memo': memo,
+                '__Jshop_Token__': __Jshop_Token__
+            }, function (e) {
+                if (e.status) {
+                    layer.msg(e.msg, {time: 1500}, function () {
+                        layer.closeAll();
+                        layui.table.reload('userTable');
+                    });
+                } else {
+                    layer.msg(e.msg);
+                }
+            });
+        });
+        //积分记录
+        $(document).on('click', '.point', function () {
+            var id = $(this).attr('data-id');
+            JsGet("<?php echo url('manage/user/pointLog'); ?>?user_id="+id+"&flag=false", function(e){
+                if(e.status){
+                    layer.open({
+                        type: 1,
+                        title: '用户积分记录',
+                        area: ['800px', '535px'], //宽高
+                        content: e.data
+                    });
+                }else{
+                    layer.msg(e.msg);
+                }
+            });
+        });
+        //添加
+        layui.form.on('submit(user-add)', function () {
+            JsGet("<?php echo url('User/addUser'); ?>", function(e){
+                if(e.status){
+                    window.box = layer.open({
+                        type: 1,
+                        content: e.data,
+                        area: ['700px', '550px'],
+                        title: '添加用户',
+                        btn: ['确定', '取消'],
+                        zIndex: 1800,
+                        yes: function () {
+                            var data = $("#userAdd").serializeArray();
+                            JsPost('<?php echo url("User/addUser"); ?>', data, function(e){
+                                if (e.status) {
+                                    layer.close(window.box);
+                                    layer.msg(e.msg, { time: 1300 }, function () {
+                                        layui.table.reload('userTable');
+                                    });
+                                } else {
+                                    layer.msg(e.msg);
+                                }
+                            });
+                        }
+                    });
+                }else{
+                    layer.msg(e.msg);
+                }
+            });
+            return false;
+        });
+        //编辑
+        $(document).on('click', '.edit', function () {
+            var user_id = $(this).attr('data-id');
+            JsGet('<?php echo url("User/editUser"); ?>?user_id='+user_id, function(e){
+                if(e.status){
+                    window.box = layer.open({
+                        type: 1,
+                        content: e.data,
+                        area: ['700px', '570px'],
+                        title: '编辑用户',
+                        btn: ['确定', '取消'],
+                        zIndex: 1800,
+                        yes: function () {
+                            var data = $("#userEdit").serializeArray();
+                            JsPost('<?php echo url("User/editUser"); ?>', data, function(e){
+                                if (e.status) {
+                                    layer.close(window.box);
+                                    layer.msg(e.msg, { time: 1300 }, function () {
+                                        layui.table.reload('userTable');
+                                    });
+                                } else {
+                                    layer.msg(e.msg);
+                                }
+                            });
+                        }
+                    });
+                }else{
+                    layer.msg(e.msg);
+                }
+            });
+        });
+        //余额编辑
+        $(document).on('click', '.editMoney', function () {
+            var id = $(this).attr('data-id');
+            JsGet("<?php echo url('manage/user/editMoney'); ?>?user_id="+id+"&flag=false", function(e){
+                if(e.status){
+                    layer.open({
+                        type: 1,
+                        title: '修改用户余额',
+                        area: ['450px', '300px'], //宽高
+                        content: e.data
+                    });
+                }else{
+                    layer.msg(e.msg);
+                }
+            });
+        });
+        //保存余额
+        $(document).on('click', '.edit-money-save', function () {
+            var user_id = $("#user_id").val();
+            var money = $("#money").val();
+            JsPost("<?php echo url('manage/user/editMoney'); ?>",{
+                'user_id': user_id,
+                'flag': 'true',
+                'money': money
+            },function(e){
+                if (e.status) {
+                    layer.msg(e.msg, { time: 1500 }, function () {
+                        layer.closeAll();
+                        layui.table.reload('userTable');
+                    });
+                } else {
+                    layer.msg(e.msg);
+                }
+            });
+
+        });
+        //余额明细
+        $(document).on('click', '.balance', function () {
+            var id = $(this).attr('data-id');
+            window.location.href = "<?php echo url('manage/balance/index'); ?>" + '?user_id=' + id;
+        });
+        //会员导出
+        layui.form.on('submit(export-user)', function (data) {
+
+            layer.open({
+                type: 1,
+                title: '会员导出',
+                area: ['400px', '290px'], //宽高
+                btn: ['确定', '取消'],
+                content: $("#exportUser").html(),
+                yes: function () {
+                    //判断是否有选中
+                    var filter = $(".seller-form").serialize();
+                    $(".export-form:last").append("<input type='hidden' name='filter' value='" + filter + "'>");
+                    var data = $(".export-form:last").serializeArray();
+                    data.push({ 'name': 'model', 'value': 'User' });
+                    JsPost("<?php echo url('Ietask/export'); ?>", data, function (res) {
+                        layer.msg(res.msg, { time: 1500 }, function () {
+                            if (res.status) {
+                                table.reload();
+                                layer.closeAll();
+                            }
+                        });
+                    }
+                    );
+                }, btn2: function () {
+                    layer.closeAll();
+                }
+            });
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+        //会员导入
+        layui.form.on('submit(import-user)', function (data) {
+            layer.open({
+                type: 1,
+                title: '会员导入',
+                area: ['400px', '290px'], //宽高
+                btn: ['确定', '取消'],
+                content: $("#importUser").html(),
+                yes: function (index, obj) {
+                    $(obj).find('.import-form').ajaxSubmit({
+                        type: 'post',
+                        dataType: 'json',
+                        success: function (result) {
+                            layer.msg(result.msg, { time: 1500 }, function () {
+                                if (result.status) {
+                                    table.reload();
+                                    layer.closeAll();
+                                }
+                            });
+                        },
+                        error: function (result) {
+                            layer.msg("导入失败");
+                        }
+                    });
+                }, btn2: function () {
+                    layer.closeAll();
+                }
+            });
+        });
+    });
+</script>
+</div>
+</body>
+</html>
